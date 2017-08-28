@@ -1,3 +1,6 @@
+import { TournamentsPageModule } from './../pages/tournaments/tournaments.module';
+import { TournamentsPage } from './../pages/tournaments/tournaments';
+import { MyTeamsPage } from './../pages/my-teams/my-teams';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -13,17 +16,21 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MyTeamsPage,
+
   ],
   imports: [
     BrowserModule,
+    TournamentsPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    MyTeamsPage,
   ],
   providers: [
     StatusBar,
