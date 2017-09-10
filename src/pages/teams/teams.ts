@@ -1,12 +1,13 @@
+import { TeamHomePage } from './../team-home/team-home';
+import { TeamsDetailPage } from './../teams-detail/teams-detail';
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the TeamsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+export interface Team {
+  id: number;
+  name: string;
+}
 
 @IonicPage()
 @Component({
@@ -14,12 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'teams.html',
 })
 export class TeamsPage {
-
+  teams: Team[] = [
+    {id: 1, name: 'HC Elite'},
+    {id: 2, name: 'Pizza Sundays'},
+    { id:3, name: 'Mothers of Creation'}
+  ]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TeamsPage');
+
+  itemTapped(event: Event, team: Team) {
+    console.log(team);
+    this.navCtrl.push(TeamHomePage, team);
   }
 
 }

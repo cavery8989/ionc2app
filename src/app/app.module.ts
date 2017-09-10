@@ -1,3 +1,8 @@
+import { StandingsPageModule } from './../pages/standings/standings.module';
+import { TeamHomePageModule } from './../pages/team-home/team-home.module';
+import { TeamHomePage } from './../pages/team-home/team-home';
+import { TeamsDetailPageModule } from './../pages/teams-detail/teams-detail.module';
+import { TeamsPageModule } from './../pages/teams/teams.module';
 import { TournamentsPageModule } from './../pages/tournaments/tournaments.module';
 import { TournamentsPage } from './../pages/tournaments/tournaments';
 import { MyTeamsPage } from './../pages/my-teams/my-teams';
@@ -18,11 +23,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     MyTeamsPage,
-
+    
   ],
   imports: [
     BrowserModule,
     TournamentsPageModule,
+    TeamsPageModule,
+    TeamsDetailPageModule,
+    TeamHomePageModule,
+    StandingsPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
